@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script> function getRandomNumber(ms) {
+        return new Promise(resolve => {
+            setTimeout(resolve, ms);
+        });
+    }
+    
+    async function print(num) {
+        for (let i = 1; i <= num; i++) {
+    
+            await getRandomNumber(Math.random() * 5000); // wait 
+    
+            console.log(i); // print number
+        }
+    }
+    print(5); // actually execute function
+    console.log(print);
+</script>
+
+</body>
+</html>
